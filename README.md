@@ -24,10 +24,9 @@ This is a repo to improve my skills and learn WebDevelopment
 * Using the browser DevTools
 
 ## Links & Resources
-[Interneting Is Hard – 
-Friendly web development tutorials for complete beginners]([url](https://internetingishard.netlify.app/))
-[HTML Basics on MDN]([url](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics))
-[The Modern JavaScript Tutorial]([url](https://javascript.info/))
+* [Interneting Is Hard – Friendly web development tutorials for complete beginners](https://internetingishard.netlify.app/)
+* [HTML Basics on MDN](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
+* [The Modern JavaScript Tutorial](https://javascript.info/)
 
 
 ## Ideas
