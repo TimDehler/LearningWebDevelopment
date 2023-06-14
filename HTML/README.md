@@ -16,8 +16,8 @@ The easiest way to validate your HTML is to use online Tools for validation. Che
 
 < p>This is a paragraph< /p> <-This is a whole HTML-Element
 
-A basic HTML-Element consists of three parts:
+### A basic HTML-Element consists of three parts:
 
-< p > <- This is the opening tag
-This is a paragraph <- This is the Content
-< /p > <- This is the closing Tag
+< p > <- This is the opening tag<br />
+This is a paragraph <- This is the Content<br />
+< /p > <- This is the closing Tag<br />
