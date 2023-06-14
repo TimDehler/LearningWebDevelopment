@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form>
+      Name: <input type="text" /><br />
+      Age: <input type="number" /><br />
+      Email: <input type="email" /><br />
+      Password: <input type="password" /><br />
+      Id proof: <input type="file" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <p>Click on the label tag to activate the corresponding element.</p>
+    <form>
+      <!-- Add label method 1 -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" /><br />
+      <!-- Add label method 2 -->
+      <label
+        >Age:
+        <input type="number" />
+      </label>
+    </form>
+
+    <form>
+      <label for="feedback">Feedback:</label>
+      <textarea id="feedback"></textarea><br />
+      <input type="submit" value="submit" />
+    </form>
+
+    <select id="lang">
+      <option value="HTML">HTML</option>
+      <option value="CSS">CSS</option>
+      <option value="javascript">JavaScript</option>
+      <option value="anotheroption">This is another option</option>
+    </select>
+  </body>
+</html>

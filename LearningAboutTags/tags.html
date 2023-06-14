@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <title>Learning HTML Tags</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <!-- Here you can find all common formatting tags -->
+      <div class="formatting_tags">
+        <h1>Formatting Tags!</h1>
+        <p>NOTBOLD<b> BOLD</b></p>
+        <p>NOTSTRONG<strong> STRONG</strong></p>
+        <p>NOTITALIC<i> ITALIC</i></p>
+        <p>NOTEM<em> EM</em></p>
+        <p>NOTUNDERLINED<u> UNDERLINED</u></p>
+        <p>NOTSUPERSCRIPTED<sup> SUPERSCRIPTED</sup></p>
+        <p>NOTSUBSCRIPTED<sub> SUBSCRIPTED</sub></p>
+        <pre>PREFORMATTED</pre>
+        <p>NOTSMALL<small> SMALL</small></p>
+        <p>NOTSUBSCRIPTED<sub> SUBSCRIPTED</sub></p>
+        <p>NOACRONYM<abbr> ACRONYM</abbr></p>
+        <p>NOCODE<code> CODE</code></p>
+        <p>NOKEYBOARDINPUT<kbd> KEYBOARDINPUT</kbd></p>
+        <p>NOTDELETED <del>DELETED</del></p>
+        <p>NOTINSERTED <ins>INTSERTED</ins></p>
+        <p>NOTMARKED <mark>MARKED</mark></p>
+        <blockquote>BLOCKQUOTE</blockquote>
+        <p>CORRECT <s>NOTCORRECT</s></p>
+        <address>ADDRESS</address>
+        <p>NOCITE <cite>CITE</cite></p>
+        <dfn>WILL BE DEFINED</dfn>
+        <p>
+          METER TAG
+          <meter min="0" max="100" low="33" high="66" value="65"></meter>
+        </p>
+        <p>PROGRESS TAG <progress max="100" value="75"></progress></p>
+        <p>...<q>THIS IS A QUOTATION</q>...</p>
+        <samp>SAMPLE OUTPUT </samp>
+      </div>
+      <!-- Here you can find all common image tags -->
+      <div class="image_tags">
+        <img src="../SampleData/IMG/example.jpg" alt="image of a cat" />
+
+        <style>
+          figure {
+            padding: 5px;
+            width: fit-content;
+            border: 1px solid silver;
+          }
+        </style>
+        <figure>
+          <img src="../SampleData/IMG/example.jpg" alt="a cat" />
+          <figcaption>Image of a cat</figcaption>
+        </figure>
+
+        <p>
+          Adjust the window size to 600px and see how the browser chooses
+          different sources of images for different scenarios.
+        </p>
+        <picture>
+          <source
+            srcset="../SampleData/IMG/example.jpg"
+            media="(max-width:600px)"
+          />
+          <img src="../SampleData/IMG/example.jpg" alt="image" />
+        </picture>
+
+        <map name="yourMap">
+          <area
+            shape="poly"
+            coords="150,0,150,177,0,260"
+            href="https://www.tutorialstonight.com/html/html-introduction"
+            target="_blank"
+            alt="HTML Tutorial"
+          />
+          <area
+            shape="poly"
+            coords="0,260,150,178,300,260"
+            href="https://www.tutorialstonight.com/css/css-introduction"
+            target="_blank"
+            alt="CSS Tutorial"
+          />
+          <area
+            shape="poly"
+            coords="151,0,151,177,300,260"
+            href="https://www.tutorialstonight.com/js/"
+            target="_blank"
+            alt="JavaScript Tutorial"
+          />
+        </map>
+        <img
+          src="../SampleData/IMG/example.jpg"
+          alt="map and area"
+          usemap="#yourMap"
+        />
+
+        <canvas id="myCanvas"></canvas>
+        <style>
+          canvas {
+            border: 1px solid black;
+          }
+        </style>
+        <script>
+          const canvas = document.getElementById("myCanvas");
+          const ctx = canvas.getContext("2d");
+          ctx.fillStyle = "yellow";
+          ctx.fillRect(20, 20, 50, 50);
+          ctx.fillRect(80, 20, 50, 50);
+          ctx.fillStyle = "red";
+          ctx.fillRect(50, 80, 50, 50);
+        </script>
+
+        <svg width="300" height="150">
+          <circle
+            cx="60"
+            cy="60"
+            r="50"
+            stroke="gray"
+            stroke-width="2"
+            fill="yellow"
+          />
+          <rect
+            width="100"
+            height="100"
+            style="
+              fill: rgb(201, 68, 68);
+              stroke-width: 2;
+              stroke: rgb(0, 0, 0);
+            "
+            x="150"
+          />
+        </svg>
+      </div>
+      <!-- Here you can find all common nav tags -->
+      <div class="nav_tags">
+        <a href="https://www.google.com" title="google"
+          >Click to visit google!</a
+        >
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <!--link tag is to find in the <head> section of this document -->
+      </div>
+      <!-- Here you can find all common list tags -->
+      <div class="list_tags">
+        <!--
+        type="a" - lowercase letters
+        type="A" - uppercase letters
+        type="i" - lowercase roman letters
+        type="I" - uppercase roman letters
+        type="1" - numbers (default)
+        -->
+        <ol>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ol>
+        <p>Changing type of ordered list.</p>
+        <ol type="I">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ol>
+
+        <!--
+            type="circle"
+            type="disc"
+            type="square"
+        -->
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+        <p>Changing type of ordered list.</p>
+        <ul type="square">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+
+        <dl>
+          <dt>HTML</dt>
+          <dd>A markup language</dd>
+          <dt>CSS</dt>
+          <dd>A language to design webpages</dd>
+          <dt>JavaScript</dt>
+          <dd>A scripting language</dd>
+        </dl>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>
