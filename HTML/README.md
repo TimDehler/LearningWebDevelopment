@@ -14,10 +14,15 @@ The easiest way to validate your HTML is to use online Tools for validation. Che
 
 ## How is a HTML-Element structured
 
-< p>This is a paragraph< /p> <-This is a whole HTML-Element
+< p>This is a paragraph< /p> <- This is a whole HTML-Element
 
 ### A basic HTML-Element consists of three parts:
 
 < p > <- This is the opening tag<br />
 This is a paragraph <- This is the Content<br />
-< /p > <- This is the closing Tag<br />
+< /p > <- This is the closing tag<br />
+
+A HTML-Element can also have something like attributes:
+
+< p class="paragraph">This is a paragraph< /p> <- This paragraph element has a class attribute
+Here "class" is the attributes name and "paragraph" is the class-attributes value.
