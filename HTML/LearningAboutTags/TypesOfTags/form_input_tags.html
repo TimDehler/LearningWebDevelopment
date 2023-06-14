@@ -34,5 +34,51 @@
       <option value="javascript">JavaScript</option>
       <option value="anotheroption">This is another option</option>
     </select>
+
+    <label for="lang">Choose one to start: </label>
+    <select id="lang">
+      <optgroup label="Web Design">
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+      </optgroup>
+      <optgroup label="Web Development">
+        <option value="javascript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="PHP">PHP</option>
+      </optgroup>
+    </select>
+
+    <form>
+      <fieldset>
+        <legend>Personal data</legend>
+        <label>Name: <input type="text" /></label>
+        <label>Age: <input type="number" /></label>
+      </fieldset>
+      <fieldset>
+        <legend>Academic data</legend>
+        <label>Degree: <input type="text" /></label>
+        <label>Percentage: <input type="number" /></label>
+      </fieldset>
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <form>
+      <label
+        >Choose or submit your own language:
+        <input list="languages" />
+        <datalist id="languages">
+          <option value="HTML">HTML</option>
+          <option value="CSS">CSS</option>
+          <option value="JS">JS</option>
+        </datalist>
+        <input type="submit" value="Submit" />
+      </label>
+    </form>
+
+    <form>
+      <label>Name: <input type="text" /></label>
+      <button type="submit">Submit the form</button>
+    </form>
   </body>
 </html>
