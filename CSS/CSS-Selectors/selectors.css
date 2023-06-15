@@ -1,0 +1,83 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+header,
+body,
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+section {
+  height: 50%;
+  width: 100%;
+}
+
+.centered {
+  background-color: black;
+}
+
+.section-1 {
+  font-size: xx-large;
+}
+
+.section-2 > h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.section-3 > h1 ~ article ~ p {
+  font-size: xx-large;
+}
+
+h1 + p {
+  background-color: green;
+}
+
+p::first-letter {
+  background-color: red;
+}
+
+p:hover {
+  cursor: crosshair;
+}
+
+a:visited {
+  background-color: yellow;
+  font-size: xx-small;
+}
+
+a :hover {
+  cursor: pointer;
+}
+
+a#visited {
+  background-color: yellow;
+}
+
+a[href^="https"] {
+  background-color: pink;
+}
+
+input:checked {
+  margin: 100px;
+}
+
+input:valid {
+  background-color: green;
+}
+
+p:empty {
+  background-color: red;
+  width: 100%;
+  height: 15px;
+}
+
+p:nth-child(2) {
+  background-color: beige;
+}
