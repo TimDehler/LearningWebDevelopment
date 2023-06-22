@@ -27,17 +27,17 @@ let b = 100; // Global scope
 const anotherFunc = () => {
   let b = 20; // Function scope
 
-  const childFunc = () => {
+  function childFunc() {
     let c = 5; // Local Scope
 
     console.log(b); // Output: 20
     console.log(c); // Output: 5
-  };
-  childFunc();
+  }
 
   console.log(b); // Output: 20
   console.log(c); // Error: c is not defined
   // Because b is local scope to ChildFunc()
+  return childFunc();
 };
 
 anotherFunc()();
