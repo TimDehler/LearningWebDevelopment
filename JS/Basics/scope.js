@@ -40,4 +40,4 @@ const anotherFunc = () => {
   return childFunc();
 };
 
-anotherFunc()();
+anotherFunc()(); // Calls the child function
