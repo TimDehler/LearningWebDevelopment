@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="yourStyleDocument.css" />
+    <script src="yourScriptDocument.js"></script>
+    <!-- Need to use window.event "load" to execute script after html is loaded otherwise put after body closing tag-->
+    <title>This is a HTML setup</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <input
+        id="password-input"
+        style="width: 300px"
+        type="password"
+        placeholder="Put your password here ..."
+      />
+      <input type="checkbox" onchange="showPassword()" />
+      <button onclick="showPassword()">Show password</button>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="./script.js"></script>
+</html>

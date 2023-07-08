@@ -16,7 +16,7 @@ let obj = [
   { name: "tim", age: 21 },
   { name: "john", age: 55 },
   { name: "senna", age: 21 },
-  { name: "person" },
+  { name: "person", age: 23 },
   { age: 22 },
 ];
 
