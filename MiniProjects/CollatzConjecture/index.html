@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>This is a HTML setup</title>
+    <style>
+      .line {
+        fill: none;
+        stroke-width: 2px;
+        stroke: steelblue; /* Set the line color to steelblue */
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>This is a display of the "Collatz Conjecture"</h1>
+    </header>
+    <main>
+      <input
+        style="width: 200px"
+        type="number"
+        id="input"
+        placeholder="put in any simple positive number"
+      />
+      <button onclick="createSequenzes_For_n_Height()">Submit</button>
+      <div id="output">
+        <table style="margin-top: 10px">
+          <thead>
+            <th>Starting Number</th>
+            <th>Sequenz</th>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+      <svg id="chart"></svg>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="./script.js"></script>
+</html>
