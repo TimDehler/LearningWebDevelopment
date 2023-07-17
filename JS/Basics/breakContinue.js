@@ -20,6 +20,6 @@ switch (color) {
 }
 
 for (let i = 1; i <= 5; i++) {
-  if (i === 3) continue;
+  if (i === 3) continue; // We skip this iteration and continue with the next one
   console.log(i);
 }

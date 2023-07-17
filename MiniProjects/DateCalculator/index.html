@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>This is a HTML setup</title>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <section>
+        <h1>Put in your date of birth</h1>
+        <input id="day" type="number" placeholder="day" />
+        <input id="month" type="number" placeholder="month" />
+        <input id="year" type="number" placeholder="year" />
+        <button onclick="submitButtonPressed()">Submit</button>
+      </section>
+      <input id="date-input" type="date" />
+      <input type="checkbox" onchange="datePickerSubmitted()" />
+      <section>
+        <h1>Output:</h1>
+        <h2 id="output"></h2>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="./script.js"></script>
+</html>
