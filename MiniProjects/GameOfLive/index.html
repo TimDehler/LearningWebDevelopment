@@ -2,13 +2,31 @@
 <html lang="en">
   <head>
     <title>This is a HTML setup</title>
+    <style>
+      .web-view {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+      .web-view_element {
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <header></header>
     <main>
-      <button onclick="createBoard(50)">Start</button>
-      <button onclick="calculateNextGen()">Next Gen</button>
+      <button onclick="start()">Start</button>
+      <input
+        type="number"
+        id="field-set"
+        placeholder="Set Field Length/Height"
+      />
+      <button onclick="run()">Run</button>
       <div id="board"></div>
+      <br />
+      <div id="web-view" class="web-view"></div>
     </main>
     <footer></footer>
   </body>
