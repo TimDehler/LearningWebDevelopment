@@ -41,6 +41,10 @@ const RECcalculateNextGen = () => {
   translateNextGenBoardToWebView();
   nextGenBoard = returnEmptyBoard(gameFieldSize);
 
+  handleRecursion();
+};
+
+const handleRecursion = () => {
   if (pause === false) {
     if (gensToCalculate !== -1) {
       if (genCounter < gensToCalculate) {
