@@ -1,16 +1,63 @@
 let board = [];
 let nextGenBoard = [];
-let global_n = 0;
+let gameFieldSize = 0;
 const board_Element = document.getElementById("board");
 const webView = document.getElementById("web-view");
+let pause = false;
+
+let genCounter = 1;
+let gensToCalculate;
 
 const start = () => {
-  global_n = document.getElementById("field-set").value;
-  createBoard(global_n);
+  gameFieldSize = document.getElementById("field-set").value;
+  createBoard(gameFieldSize);
   createWebViewElements();
 };
 
-const translateArrToWebView = () => {
+const run = () => {
+  const webElements = document.querySelectorAll(".web-view_element");
+
+  gensToCalculate = document.getElementById("gens-to-calculate").value;
+  if (gensToCalculate === "") gensToCalculate = -1;
+  // Need to add removing of event listener
+
+  webElements.forEach((element) => {
+    const numbers = element.id.split("-");
+    const x = Number(numbers[0].trim());
+    const y = Number(numbers[1].trim());
+
+    board[x][y] = element.textContent;
+  });
+  RECcalculateNextGen();
+};
+
+const RECcalculateNextGen = () => {
+  for (let x = 0; x < board.length; x++) {
+    for (let y = 0; y < board.length; y++) {
+      applyRules(x, y);
+    }
+  }
+  board = nextGenBoard;
+  translateNextGenBoardToWebView();
+  nextGenBoard = returnEmptyBoard(gameFieldSize);
+
+  if (pause === false) {
+    if (gensToCalculate !== -1) {
+      if (genCounter < gensToCalculate) {
+        genCounter++;
+        setTimeout(() => {
+          RECcalculateNextGen();
+        }, 400);
+      }
+    } else {
+      setTimeout(() => {
+        RECcalculateNextGen();
+      }, 400);
+    }
+  }
+};
+
+const translateNextGenBoardToWebView = () => {
   const webElements = document.querySelectorAll(".web-view_element");
 
   webElements.forEach((element) => {
@@ -22,8 +69,8 @@ const translateArrToWebView = () => {
 };
 
 const createWebViewElements = () => {
-  for (let x = 0; x < global_n; x++) {
-    for (let y = 0; y < global_n; y++) {
+  for (let x = 0; x < gameFieldSize; x++) {
+    for (let y = 0; y < gameFieldSize; y++) {
       const tempDoc = document.createElement("div");
       tempDoc.setAttribute("class", "web-view_element");
       tempDoc.textContent = "🟥";
@@ -32,9 +79,13 @@ const createWebViewElements = () => {
     }
   }
 
-  webView.style.width = `${global_n * 21.9688}px`;
-  webView.style.height = `${global_n * 21.3333}px`;
+  webView.style.width = `${gameFieldSize * 21.9688}px`;
+  webView.style.height = `${gameFieldSize * 21.3333}px`;
 
+  addEventListeners();
+};
+
+const addEventListeners = () => {
   document.querySelectorAll(".web-view_element").forEach((element) => {
     element.addEventListener("click", function () {
       if (element.textContent === "🟥") {
@@ -46,40 +97,12 @@ const createWebViewElements = () => {
   });
 };
 
-const run = () => {
-  const webElements = document.querySelectorAll(".web-view_element");
-
-  // Need to add removing of event listener
-
-  webElements.forEach((element) => {
-    const numbers = element.id.split("-");
-    const x = Number(numbers[0].trim());
-    const y = Number(numbers[1].trim());
-
-    board[x][y] = element.textContent;
-  });
-  console.log(board);
-  calculateNextGen();
-};
-
 const createBoard = (n) => {
   board = returnEmptyBoard(n);
   nextGenBoard = returnEmptyBoard(n);
 };
 
-const calculateNextGen = () => {
-  for (let x = 0; x < board.length; x++) {
-    for (let y = 0; y < board.length; y++) {
-      applyRules(x, y);
-    }
-  }
-  board = nextGenBoard;
-  translateArrToWebView();
-  nextGenBoard = returnEmptyBoard(global_n);
-  setTimeout(() => {
-    calculateNextGen();
-  }, 400);
-};
+// REC -> Recursive function
 
 const applyRules = (x, y) => {
   const neighbours = checkForNeighbours(x, y);
@@ -186,4 +209,17 @@ const returnEmptyBoard = (n) => {
     emptyBoard.push(fillArray(n));
   }
   return emptyBoard;
+};
+
+const togglePauseResume = () => {
+  const btn = document.getElementById("pauseResumeButton");
+
+  if (pause) {
+    btn.textContent = "Pause";
+    pause = false;
+    RECcalculateNextGen();
+  } else {
+    btn.textContent = "Resume";
+    pause = true;
+  }
 };

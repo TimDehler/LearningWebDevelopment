@@ -3,6 +3,11 @@
   <head>
     <title>This is a HTML setup</title>
     <style>
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .web-view {
         display: flex;
         flex-wrap: wrap;
@@ -12,18 +17,42 @@
         justify-content: center;
         align-items: center;
       }
+      .gameBar {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .gameBar button,
+      .gameBar h1,
+      .gameBar input {
+        margin: 2px;
+        flex-grow: 1;
+      }
     </style>
   </head>
   <body>
-    <header></header>
-    <main>
-      <button onclick="start()">Start</button>
-      <input
-        type="number"
-        id="field-set"
-        placeholder="Set Field Length/Height"
-      />
-      <button onclick="run()">Run</button>
+    <header>
+      <h1><b>Game of Life</b></h1>
+    </header>
+    <main id="main">
+      <section id="gameBar" class="gameBar">
+        <button onclick="start()">Start</button>
+        <input
+          type="number"
+          id="field-set"
+          placeholder="Set Field Length/Height"
+        />
+        <input
+          type="number"
+          id="gens-to-calculate"
+          placeholder="Set the amount of generations to calc"
+          style="width: 100%"
+        />
+        <button onclick="run()">Run</button>
+        <button id="pauseResumeButton" onclick="togglePauseResume()">
+          Pause
+        </button>
+      </section>
       <div id="board"></div>
       <br />
       <div id="web-view" class="web-view"></div>
